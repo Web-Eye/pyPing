@@ -35,7 +35,7 @@ def main():
     parser.add_argument('-t', '--target', dest='target', type=str, default='localhost')
     parser.add_argument('-to', '--timeout', dest='timeout', type=int, default=1)
     parser.add_argument('-lf', '--logfile', dest='log_file', type=str)
-    parser.add_argument('-ll', '--log_level', dest='log_level', type=str, default='INFO',
+    parser.add_argument('-ll', '--loglevel', dest='log_level', type=str, default='INFO',
                         choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'])
     parser.add_argument('-tp', '--template', dest='template', type=str, default='internet',
                         choices=['lan', 'internet'])
