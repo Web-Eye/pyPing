@@ -70,11 +70,7 @@ def main():
 
     try:
         while True:
-            if _loggerExists:
-                _stdOut = StringIO()
-            else:
-                _stdOut = None
-
+            _stdOut = StringIO()
             ping(target=args.target, count=1, verbose=True, out=_stdOut)
             line = _stdOut.getvalue().strip()
 
