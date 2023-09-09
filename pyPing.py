@@ -26,6 +26,8 @@ from pythonping import ping
 from io import StringIO
 
 
+__VERSION__ = "1.0.1"
+
 def main():
     parser = argparse.ArgumentParser(
       description='runner',
@@ -39,10 +41,15 @@ def main():
                         choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'])
     parser.add_argument('-tp', '--template', dest='template', type=str, default='internet',
                         choices=['lan', 'internet'])
+    parser.add_argument('-v', '--version', action='store_true')
 
     try:
         args = parser.parse_args()
     except SystemExit:
+        sys.exit()
+
+    if args.version:
+        print(f'pyPing Version {__VERSION__}')
         sys.exit()
 
     _loggerExists = False
